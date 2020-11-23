@@ -16,6 +16,10 @@ const App = () => {
       setMovies(responseJson.Search);
     }
   };
+
+  useEffect(() => {
+    getMovieRequest();
+  }, []);
 	
 	return (
 		<div className='container-fluid movie-app'>

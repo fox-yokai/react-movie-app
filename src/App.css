@@ -6,4 +6,9 @@ body {
 .movie-app > .row {
 	overflow-x: auto;
 	flex-wrap: nowrap;
+	scrollbar-width: none;
+}
+
+.movie-app > .row::-webkit-scrollbar {
+	display: none;
 }

@@ -9,8 +9,8 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   
-  const getMovieRequest = async () => {
-    const url = `http://www.omdbapi.com/?s=star wars&apikey=9ea908e6`;
+  const getMovieRequest = async (searchValue) => {
+    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=9ea908e6`;
 
     const response = await fetch (url);
     const responseJson = await response.json();
@@ -21,8 +21,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    getMovieRequest();
-  }, []);
+    getMovieRequest(searchValue);
+  }, [searchValue]);
 	
 	return (
 		<div className='container-fluid movie-app'>
